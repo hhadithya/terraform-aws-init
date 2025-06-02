@@ -1,0 +1,12 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+
+# Exclude Terraform provider directories
+.terraform/
+
+# Exclude any .tfvars files that might contain secrets (use environment variables or other secure methods instead)
+# *.tfvars

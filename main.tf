@@ -14,12 +14,22 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket-init-test" {
   # S3 bucket names must be globally unique across ALL of AWS.
-  bucket =  "terraform-bucket-init-hh-2025-06-02"
+  bucket = "terraform-bucket-init-hh-2025-06-02"
 
   # Add tags, which is a best practice
   tags = {
-    Name = "TerraformBucket"
+    Name    = "TerraformBucket"
     Project = "TerraformAwsInit"
-    Owner = "hhadithya"
+    Owner   = "hhadithya"
   }
+}
+
+resource "aws_s3_bucket_public_access_block" "bucket-init-test_public_access_block" {
+  # Reference the bucket ID
+  bucket = aws_s3_bucket.bucket-init-test
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }

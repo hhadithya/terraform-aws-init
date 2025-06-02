@@ -33,3 +33,15 @@ resource "aws_s3_bucket_public_access_block" "bucket-init-test_public_access_blo
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+output "bucket_name" {
+  description = "Name of the S3 bucket"
+
+  value = aws_s3_bucket.bucket-init-test.id
+}
+
+output "bucket_arn" {
+  description = "ARN of the S3 bucket"
+
+  value = aws_s3_bucket.bucket-init-test.arn
+}

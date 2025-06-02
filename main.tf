@@ -26,7 +26,7 @@ resource "aws_s3_bucket" "bucket-init-test" {
 
 resource "aws_s3_bucket_public_access_block" "bucket-init-test_public_access_block" {
   # Reference the bucket ID
-  bucket = "terraform-bucket-init-hh-2025-06-02"
+  bucket = aws_s3_bucket.bucket-init-test.id
 
   block_public_acls       = true
   block_public_policy     = true

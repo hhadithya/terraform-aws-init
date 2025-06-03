@@ -20,7 +20,7 @@ resource "aws_s3_bucket" "bucket-init-test" {
   tags = {
     Name    = "TerraformBucket"
     Project = "TerraformAwsInit"
-    Owner   = "hhadithya"
+    Owner   = "TerraformOperator"
   }
 }
 
